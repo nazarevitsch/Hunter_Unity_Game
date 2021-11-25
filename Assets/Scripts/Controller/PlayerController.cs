@@ -7,7 +7,11 @@ namespace Controller
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject _player;
         private PlayerView _playerView;
+        [SerializeField]
+        public GameObject Bullet;
         void Awake()
         {
             _playerView = FindObjectOfType<PlayerView>();
@@ -17,7 +21,10 @@ namespace Controller
         {
             _playerView.movement.x = Input.GetAxisRaw("Horizontal");
             _playerView.movement.y = Input.GetAxisRaw("Vertical");
-            _playerView.Move();
+            if (Input.GetMouseButtonDown(0))
+            {
+                var bullet = Instantiate(Bullet, _player.transform.position, Quaternion.identity);
+            }
         }
     }
 }
