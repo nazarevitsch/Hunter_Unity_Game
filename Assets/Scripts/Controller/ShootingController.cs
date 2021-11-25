@@ -25,5 +25,8 @@ public class ShootingController : MonoBehaviour
         GameObject firedBullet = Instantiate(this.bullet, firePosition.position, Quaternion.identity);
         Rigidbody2D bulletRb = firedBullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(firePosition.up * bulletSpeed, ForceMode2D.Impulse);
+        var bulletController = bulletRb.GetComponent<BulletController>();
+        bulletController.startX = firePosition.position.x;
+        bulletController.startY = firePosition.position.y;
     }
 }
