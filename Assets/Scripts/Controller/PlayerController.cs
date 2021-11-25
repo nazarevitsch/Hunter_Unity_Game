@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using View;
@@ -7,11 +8,14 @@ namespace Controller
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject _player;
+        [SerializeField] 
+        private Rigidbody2D rb;
+        [SerializeField] 
+        private Camera camera;
+        
+        
         private PlayerView _playerView;
-        [SerializeField]
-        public GameObject Bullet;
+        
         void Awake()
         {
             _playerView = FindObjectOfType<PlayerView>();
@@ -21,10 +25,12 @@ namespace Controller
         {
             _playerView.movement.x = Input.GetAxisRaw("Horizontal");
             _playerView.movement.y = Input.GetAxisRaw("Vertical");
-            if (Input.GetMouseButtonDown(0))
-            {
-                var bullet = Instantiate(Bullet, _player.transform.position, Quaternion.identity);
-            }
+
+            Vector2 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 look = mousePosition - rb.position;
+            float angel = Mathf.Atan2(look.y, look.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = angel;
+            
         }
     }
 }
