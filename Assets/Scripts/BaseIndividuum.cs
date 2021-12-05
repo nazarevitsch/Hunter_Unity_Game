@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Behaviours;
+using DefaultNamespace.Model;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -9,7 +10,7 @@ namespace DefaultNamespace
     {
         public IndividuumType type = IndividuumType.None;
 
-        public List<BaseIndividuum> otherIndividuums = new List<BaseIndividuum>();
+        public IndividuumPool otherIndividuums;
 
         public Vector3 Velocity { get; set; }
 

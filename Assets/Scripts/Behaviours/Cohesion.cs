@@ -19,7 +19,7 @@ namespace Behaviours
             var result = Vector3.zero;
             var count = 0;
 
-            foreach (var target in indiv.otherIndividuums)
+            foreach (var target in indiv.otherIndividuums.GetSpecificTypes(seekTo))
             {
                 var distance = (target.transform.position - indiv.transform.position).sqrMagnitude;
                 if (distance < cohesionRadius * cohesionRadius)

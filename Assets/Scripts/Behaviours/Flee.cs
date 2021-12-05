@@ -20,7 +20,7 @@ namespace Behaviours
         {
             var result = Vector3.zero;
             var count = 0;
-            foreach (var target in indiv.otherIndividuums)
+            foreach (var target in indiv.otherIndividuums.GetSpecificTypes(scareOf))
             {
                 if (IsVisible(indiv, target))
                 {
