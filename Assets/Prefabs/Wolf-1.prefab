@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5290691415769871737}
   - component: {fileID: 5290691415769871738}
+  - component: {fileID: 8388284307407801265}
   - component: {fileID: 5290691415769871739}
-  - component: {fileID: 5290691415769871736}
   - component: {fileID: 5290691415769871686}
   - component: {fileID: 5290691415769871687}
   m_Layer: 0
-  m_Name: Wolf
+  m_Name: Wolf-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,6 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8388284307407801265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290691415769871740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb0fe7ca25e4570b0f52d7aecd9fa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  otherIndividuums: []
+  AccelerationLimit: 10
+  VelocityLimit: 10
 --- !u!114 &5290691415769871739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,21 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6234f5c7da41339e5bdf8891c4a4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSeek: {fileID: 0}
---- !u!114 &5290691415769871736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5290691415769871740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e278538b12474fa0cef154282afac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AccelerationLimit: 2.06
-  VelocityLimit: 2.49
+  weigth: 1
+  distanceToSeek: 0
+  seekTo: 
 --- !u!61 &5290691415769871686
 BoxCollider2D:
   m_ObjectHideFlags: 0

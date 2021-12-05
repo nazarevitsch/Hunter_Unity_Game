@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1572715619004063763}
   - component: {fileID: 1572715619004063760}
+  - component: {fileID: 3486554318326309822}
   - component: {fileID: 1572715619004063761}
-  - component: {fileID: 1572715619004063762}
   - component: {fileID: 1572715619004063788}
   - component: {fileID: 1572715619004063789}
   m_Layer: 0
@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,6 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3486554318326309822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572715619004063766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb0fe7ca25e4570b0f52d7aecd9fa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  otherIndividuums: []
+  AccelerationLimit: 10
+  VelocityLimit: 10
 --- !u!114 &1572715619004063761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,21 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6234f5c7da41339e5bdf8891c4a4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSeek: {fileID: 0}
---- !u!114 &1572715619004063762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572715619004063766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e278538b12474fa0cef154282afac7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AccelerationLimit: 2.06
-  VelocityLimit: 2.49
+  weigth: 1
+  distanceToSeek: 0
+  seekTo: 
 --- !u!61 &1572715619004063788
 BoxCollider2D:
   m_ObjectHideFlags: 0
