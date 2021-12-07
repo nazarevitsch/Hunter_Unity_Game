@@ -8,9 +8,6 @@ namespace Behaviours
     public class Flee : BaseVelocityProvider
     {
         [SerializeField]
-        public Transform objectToFlee; 
-        
-        [SerializeField]
         [Range(0, 10)]
         private float distanceToRun;
 
@@ -20,7 +17,9 @@ namespace Behaviours
         {
             var result = Vector3.zero;
             var count = 0;
-            foreach (var target in indiv.otherIndividuums.GetSpecificTypes(scareOf))
+            var scareOfList = indiv.otherIndividuums?.GetSpecificTypes(scareOf) ?? new List<BaseIndividuum>();
+            
+            foreach (var target in scareOfList)
             {
                 if (IsVisible(indiv, target))
                 {

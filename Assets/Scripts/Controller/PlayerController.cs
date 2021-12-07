@@ -23,6 +23,7 @@ namespace Controller
 
         void Update()
         {
+            if (_playerView is null) return;
             _playerView.movement.x = Input.GetAxisRaw("Horizontal");
             _playerView.movement.y = Input.GetAxisRaw("Vertical");
 

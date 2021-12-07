@@ -51,10 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb0fe7ca25e4570b0f52d7aecd9fa64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  otherIndividuums: []
+  type: 1
+  otherIndividuums: {fileID: 0}
   AccelerationLimit: 10
-  VelocityLimit: 10
+  VelocityLimit: 20
 --- !u!114 &3782015892288196224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,9 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weigth: 1
-  objectToFlee: {fileID: 0}
   distanceToRun: 5
-  scareOf: 
+  scareOf: 01000000020000000300000004000000
 --- !u!114 &1927325069417211267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,11 +82,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4304a20233e4875a990bf6e92af759c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 10
-  avoidDistanceToEdge: 2
+  weigth: 2
+  avoidDistanceToEdge: 4.5
   avoidLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 19
 --- !u!114 &1043101685493984593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +218,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

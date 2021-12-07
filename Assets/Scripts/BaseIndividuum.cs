@@ -9,18 +9,12 @@ namespace DefaultNamespace
     public class BaseIndividuum : MonoBehaviour
     {
         public IndividuumType type = IndividuumType.None;
-
         public IndividuumPool otherIndividuums;
-
         public Vector3 Velocity { get; set; }
-
         public Vector3 Acceleration { get; set; }
 
-
         [SerializeField] public float AccelerationLimit = 10;
-
         [SerializeField] public float VelocityLimit = 10;
-
         private BaseVelocityProvider[] velocities;
 
         private void Start()
@@ -76,9 +70,17 @@ namespace DefaultNamespace
             Acceleration = Vector3.zero;
             var velocityRotation = Velocity;
             velocityRotation.z = 0;
+            
+            if (type != IndividuumType.Player)
+            {
+                var z = Quaternion.LookRotation(velocityRotation, Vector3.forward).eulerAngles.x;
+                transform.rotation = Quaternion.Euler(0, 0, z);
+            }
+        }
 
-            var z = Quaternion.LookRotation(velocityRotation, Vector3.forward).eulerAngles.x;
-            transform.rotation = Quaternion.Euler(0, 0, z);
+        public void Kill()
+        {
+            otherIndividuums?.Kill(this);
         }
     }
 }

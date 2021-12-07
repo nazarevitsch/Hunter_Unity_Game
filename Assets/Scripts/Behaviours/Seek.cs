@@ -17,7 +17,8 @@ namespace Behaviours
         {
             BaseIndividuum closest = null;
             var len = distanceToSeek * distanceToSeek;
-            foreach (var o in indiv.otherIndividuums.GetSpecificTypes(seekTo))
+            var seekToList = indiv.otherIndividuums?.GetSpecificTypes(seekTo) ?? new List<BaseIndividuum>();
+            foreach (var o in seekToList)
             {
                 var distance = (indiv.transform.position - o.transform.position).sqrMagnitude;
                 if (distance < len)
