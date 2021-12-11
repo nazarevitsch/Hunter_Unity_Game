@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6519742711020826841}
   - component: {fileID: 6519742711020826840}
-  - component: {fileID: 6519742711020826839}
+  - component: {fileID: 5807828711048859296}
   - component: {fileID: 6519742711020826838}
   - component: {fileID: 6519742711020826843}
   - component: {fileID: 6519742711020826842}
   m_Layer: 0
-  m_Name: Hare
+  m_Name: Hare-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6519742711020826839
+--- !u!114 &5807828711048859296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +95,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6519742711020826837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e278538b12474fa0cef154282afac7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb0fe7ca25e4570b0f52d7aecd9fa64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AccelerationLimit: 2.75
-  VelocityLimit: 2.6
+  type: 0
+  otherIndividuums: []
+  AccelerationLimit: 10
+  VelocityLimit: 10
 --- !u!114 &6519742711020826838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0aa234b8fca48ccaaf1f7cf8431a304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weigth: 1
   objectToFlee: {fileID: 0}
+  distanceToRun: 0
+  scareOf: 
 --- !u!50 &6519742711020826843
 Rigidbody2D:
   serializedVersion: 4

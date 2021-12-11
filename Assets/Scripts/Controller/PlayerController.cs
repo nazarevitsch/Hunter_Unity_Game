@@ -11,7 +11,7 @@ namespace Controller
         [SerializeField] 
         private Rigidbody2D rb;
         [SerializeField] 
-        private Camera camera;
+        private new Camera camera;
         
         
         private PlayerView _playerView;
@@ -23,6 +23,7 @@ namespace Controller
 
         void Update()
         {
+            if (_playerView is null) return;
             _playerView.movement.x = Input.GetAxisRaw("Horizontal");
             _playerView.movement.y = Input.GetAxisRaw("Vertical");
 
