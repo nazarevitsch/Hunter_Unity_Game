@@ -82,5 +82,13 @@ namespace DefaultNamespace
         {
             otherIndividuums?.Kill(this);
         }
+        
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.gameObject.CompareTag("Water"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

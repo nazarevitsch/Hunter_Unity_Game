@@ -11,7 +11,7 @@ namespace Controller
         [SerializeField] 
         private Rigidbody2D rb;
         [SerializeField] 
-        private Camera camera;
+        private new Camera camera;
         
         
         private PlayerView _playerView;

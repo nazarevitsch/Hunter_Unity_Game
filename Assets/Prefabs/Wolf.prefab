@@ -119,8 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   otherIndividuums: {fileID: 0}
-  AccelerationLimit: 10
-  VelocityLimit: 16
+  accelerationLimit: 10
+  velocityLimit: 16
 --- !u!114 &1572715619004063761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6234f5c7da41339e5bdf8891c4a4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 1
-  distanceToSeek: 7
+  weigth: 4
+  distanceToSeek: 9
   seekTo: 010000000300000004000000
 --- !u!114 &1454692009705868053
 MonoBehaviour:
@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanKill: 010000000400000003000000
+  Frames2Die: 6000
+  leftFrames: 0
 --- !u!61 &1572715619004063788
 BoxCollider2D:
   m_ObjectHideFlags: 0

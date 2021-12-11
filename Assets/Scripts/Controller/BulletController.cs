@@ -26,8 +26,7 @@ public class BulletController : MonoBehaviour
         var baseInd = collision.gameObject.gameObject.GetComponent<BaseIndividuum>();
         if (baseInd != null)
             baseInd.Kill();
-        else
-            Destroy(collision.gameObject);
+
         Destroy(gameObject);
     }
 }
