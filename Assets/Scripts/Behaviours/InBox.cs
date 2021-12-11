@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Behaviours
 {
@@ -29,11 +26,12 @@ namespace Behaviours
             {
                 var k = 1 - hits[i].distance / avoidDistanceToEdge;
                 var target = hits[i].collider.transform.position;
-                target.z = indiv.transform.position.z;
-                var distance = (target - indiv.transform.position).magnitude * 1.1f;
+                var position = indiv.transform.position;
+                target.z = position.z;
+                var distance = (target - position).magnitude * 1.1f;
                 if (Raycast(indiv.transform.position, target, distance) > 0)
                 {
-                    v += indiv.VelocityLimit * k * raycast[0].normal;
+                    v += indiv.velocityLimit * k * raycast[0].normal;
                 }
             }
             return v / count;

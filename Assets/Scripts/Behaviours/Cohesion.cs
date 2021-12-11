@@ -19,7 +19,7 @@ namespace Behaviours
             var result = Vector3.zero;
             var count = 0;
 
-            var seekToList = indiv.otherIndividuums?.GetSpecificTypes(seekTo) ?? new List<BaseIndividuum>();
+            var seekToList = indiv.otherIndividuums != null ? indiv.otherIndividuums.GetSpecificTypes(seekTo) ?? new List<BaseIndividuum>() : new List<BaseIndividuum>();
             foreach (var target in seekToList)
             {
                 var distance = (target.transform.position - indiv.transform.position).sqrMagnitude;

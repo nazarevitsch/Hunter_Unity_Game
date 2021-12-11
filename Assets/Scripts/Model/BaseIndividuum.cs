@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Behaviours;
 using DefaultNamespace.Model;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DefaultNamespace
 {
@@ -13,8 +14,8 @@ namespace DefaultNamespace
         public Vector3 Velocity { get; set; }
         public Vector3 Acceleration { get; set; }
 
-        [SerializeField] public float AccelerationLimit = 10;
-        [SerializeField] public float VelocityLimit = 10;
+        [FormerlySerializedAs("AccelerationLimit")] [SerializeField] public float accelerationLimit = 10;
+        [FormerlySerializedAs("VelocityLimit")] [SerializeField] public float velocityLimit = 10;
         private BaseVelocityProvider[] velocities;
 
         private void Start()
@@ -44,7 +45,7 @@ namespace DefaultNamespace
                 accelerationSteering += velocity.GetDirectionVelocity(this) * velocity.weigth - Velocity;
             }
 
-            ApplyForce(Vector3.ClampMagnitude(accelerationSteering, AccelerationLimit));
+            ApplyForce(Vector3.ClampMagnitude(accelerationSteering, accelerationLimit));
         }
 
         private void ApplyForce(Vector3 force)
@@ -55,11 +56,8 @@ namespace DefaultNamespace
         private void ApplyForces()
         {
             Velocity += Acceleration * Time.deltaTime;
-            //limit velocity
-            Velocity = Vector3.ClampMagnitude(Velocity, VelocityLimit);
-
-            //on small values object might start to blink, so we considering 
-            //small velocities as zeroes
+            Velocity = Vector3.ClampMagnitude(Velocity, velocityLimit);
+            
             if (Velocity.magnitude < 0.05f)
             {
                 Velocity = Vector3.zero;
@@ -70,9 +68,9 @@ namespace DefaultNamespace
             Acceleration = Vector3.zero;
             var velocityRotation = Velocity;
             velocityRotation.z = 0;
-            var new_pos = transform.position;
-            new_pos.z = 0;
-            transform.position = new_pos;
+            var newPos = transform.position;
+            newPos.z = 0;
+            transform.position = newPos;
             if (type != IndividuumType.Player)
             {
                 var z = Quaternion.LookRotation(velocityRotation, Vector3.forward).eulerAngles.x;

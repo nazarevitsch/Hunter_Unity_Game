@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DefaultNamespace;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace DefaultNamespace.Model
@@ -14,15 +15,16 @@ namespace DefaultNamespace.Model
         [SerializeField] 
         private List<BaseIndividuum> prefabs = new List<BaseIndividuum>();
 
-        [SerializeField] [Range(0, 50)] private int HareCount;
-        [SerializeField] [Range(0, 50)] private int DeerGroupsCount;
-        [SerializeField] [Range(0, 50)] private int WolfCount;
+        [FormerlySerializedAs("HareCount")] [SerializeField] [Range(0, 50)] private int hareCount;
+        [FormerlySerializedAs("DeerGroupsCount")] [SerializeField] [Range(0, 50)] private int deerGroupsCount;
+        [FormerlySerializedAs("WolfCount")] [SerializeField] [Range(0, 50)] private int wolfCount;
         [SerializeField] [Range(0, 200)] private int spawnRadius = 100;
         
-        private IndividuumPool _pool = new IndividuumPool();
+        private IndividuumPool _pool;
 
         private void Start()
         {
+            _pool = gameObject.AddComponent<IndividuumPool>();
             _pool.KillIndividuum += Respawn;
             _pool.Add(player);
             
@@ -47,7 +49,7 @@ namespace DefaultNamespace.Model
 
         private void SpawnHares(BaseIndividuum prefab)
         {
-            for (var i = 0; i < HareCount; i++)
+            for (var i = 0; i < hareCount; i++)
             {
                 RandomSpawn(prefab);
             }
@@ -55,7 +57,7 @@ namespace DefaultNamespace.Model
 
         private void SpawnWolfs(BaseIndividuum prefab)
         {
-            for (var i = 0; i < WolfCount; i++)
+            for (var i = 0; i < wolfCount; i++)
             {
                 RandomSpawn(prefab);
             }
@@ -63,13 +65,13 @@ namespace DefaultNamespace.Model
 
         private void SpawnDeers(BaseIndividuum prefab)
         {
-            for (var i = 0; i < DeerGroupsCount; i++)
+            for (var i = 0; i < deerGroupsCount; i++)
             {
                 SpawnGroup(prefab, Random.Range(3, 5));
             }
         }
 
-        private void Respawn(IndividuumType type) // Maybe this can be slow and we will need to optimize it latter.
+        private void Respawn(IndividuumType type)
         {
             foreach (var baseIndividuum in prefabs)
             {

@@ -32,7 +32,7 @@ namespace Behaviours
             if (count == 0) return indiv.Velocity / weigth;
 
             result /= count;
-            return result.normalized * indiv.VelocityLimit;        
+            return result.normalized * indiv.velocityLimit;        
         }
         
         private bool IsVisible(BaseIndividuum indiv, BaseIndividuum target)

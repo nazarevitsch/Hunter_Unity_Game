@@ -26,7 +26,7 @@ namespace Behaviours
             }
 
             finalVelocity.Normalize();
-            finalVelocity *= indiv.VelocityLimit;
+            finalVelocity *= indiv.velocityLimit;
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 finalVelocity *= 2;

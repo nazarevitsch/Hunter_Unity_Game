@@ -16,7 +16,7 @@ namespace Behaviours
             var magnitude = direction.sqrMagnitude;
 
             var k = Mathf.Clamp01(magnitude / (distance * distance));
-            return k * indiv.VelocityLimit * direction.normalized;
+            return k * indiv.velocityLimit * direction.normalized;
         }
     }
 }

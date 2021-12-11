@@ -29,9 +29,11 @@ namespace Behaviours
                 count--;
                 return VelocityToPosition(indiv, seekPosition,distance);
             }
-            var pos = indiv.transform.position;
-            var forward = Quaternion.AngleAxis((Random.value - 0.5f) * 2 * angle, indiv.transform.forward) * -indiv.transform.up;
-            var predictSpeed = Time.fixedDeltaTime * indiv.VelocityLimit * forward;
+
+            var transform1 = indiv.transform;
+            var pos = transform1.position;
+            var forward = Quaternion.AngleAxis((Random.value - 0.5f) * 2 * angle, transform1.forward) * -transform1.up;
+            var predictSpeed = Time.fixedDeltaTime * indiv.velocityLimit * forward;
             seekPosition = pos + predictSpeed * distance;
             count = countFrame;
             return VelocityToPosition(indiv, seekPosition, distance);
