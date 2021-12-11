@@ -26,7 +26,6 @@ namespace Behaviours
                     var direction = indiv.transform.position - target.transform.position;
                     result += direction.normalized;
                     count++;
-                    Debug.DrawRay(indiv.transform.position, direction.normalized * 10, Color.red);
                 }
             }
 

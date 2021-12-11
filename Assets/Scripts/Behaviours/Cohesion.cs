@@ -33,7 +33,6 @@ namespace Behaviours
             if (count == 0) return indiv.Velocity / weigth;
 
             result /= count;
-            Debug.DrawLine(indiv.transform.position, result, Color.green, 0.03f);
             return VelocityToPosition(indiv, result, cohesionRadius);
         }
     }

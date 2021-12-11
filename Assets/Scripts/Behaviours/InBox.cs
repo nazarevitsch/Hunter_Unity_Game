@@ -36,7 +36,6 @@ namespace Behaviours
                     v += indiv.VelocityLimit * k * raycast[0].normal;
                 }
             }
-            Debug.DrawLine(indiv.transform.position, indiv.transform.position + v / count, Color.cyan, 0.03f);
             return v / count;
         }
 

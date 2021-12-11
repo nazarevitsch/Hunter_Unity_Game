@@ -70,7 +70,9 @@ namespace DefaultNamespace
             Acceleration = Vector3.zero;
             var velocityRotation = Velocity;
             velocityRotation.z = 0;
-            
+            var new_pos = transform.position;
+            new_pos.z = 0;
+            transform.position = new_pos;
             if (type != IndividuumType.Player)
             {
                 var z = Quaternion.LookRotation(velocityRotation, Vector3.forward).eulerAngles.x;

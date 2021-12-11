@@ -53,6 +53,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -100,10 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70faf2e205924b439d88ad7e27a81ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 1
-  distance: 1
-  angle: 45
-  countFrame: 30
+  weigth: 10
+  distance: 5
+  angle: 180
+  countFrame: 200
 --- !u!114 &311027464490489239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0aa234b8fca48ccaaf1f7cf8431a304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 1
-  distanceToRun: 0
+  weigth: 3
+  distanceToRun: 5
   scareOf: 0200000004000000
 --- !u!114 &1622132996185388535
 MonoBehaviour:
@@ -164,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86dab3d169e84124a66e082622c2b19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 1
-  cohesionRadius: 5.09
+  weigth: 2
+  cohesionRadius: 10
   seekTo: 03000000
 --- !u!61 &2678553266683420381
 BoxCollider2D:

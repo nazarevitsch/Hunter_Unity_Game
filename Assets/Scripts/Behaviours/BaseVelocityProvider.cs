@@ -6,7 +6,7 @@ namespace Behaviours
     public abstract class BaseVelocityProvider : MonoBehaviour,  IVelocityProvider
     {
         [SerializeField]
-        public int weigth = 1;
+        public float weigth = 1;
         
         public abstract Vector3 GetDirectionVelocity(BaseIndividuum indiv);
         

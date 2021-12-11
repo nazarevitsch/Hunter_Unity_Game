@@ -9,6 +9,9 @@ namespace DefaultNamespace.Model
     public class SimpleSpavner : MonoBehaviour
     {
         [SerializeField] 
+        private BaseIndividuum player;
+        
+        [SerializeField] 
         private List<BaseIndividuum> prefabs = new List<BaseIndividuum>();
 
         [SerializeField] [Range(0, 50)] private int HareCount;
@@ -21,6 +24,8 @@ namespace DefaultNamespace.Model
         private void Start()
         {
             _pool.KillIndividuum += Respawn;
+            _pool.Add(player);
+            
             foreach (var baseIndividuum in prefabs)
             {
                 switch (baseIndividuum.type)

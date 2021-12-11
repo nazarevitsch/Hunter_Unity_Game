@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3782015892288196224}
   - component: {fileID: 1927325069417211267}
   - component: {fileID: 1043101685493984593}
-  - component: {fileID: 775580260932808116}
   - component: {fileID: 3782015892288196237}
   - component: {fileID: 3782015892288196234}
   - component: {fileID: 3782015892288196236}
@@ -67,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0aa234b8fca48ccaaf1f7cf8431a304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 1
-  distanceToRun: 5
+  weigth: 6
+  distanceToRun: 8
   scareOf: 01000000020000000300000004000000
 --- !u!114 &1927325069417211267
 MonoBehaviour:
@@ -82,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4304a20233e4875a990bf6e92af759c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weigth: 2
+  weigth: 10
   avoidDistanceToEdge: 4.5
   avoidLayer:
     serializedVersion: 2
@@ -100,24 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weigth: 7
-  distance: 2
-  angle: 45
-  countFrame: 30
---- !u!114 &775580260932808116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3782015892288196227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86dab3d169e84124a66e082622c2b19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weigth: 1
-  cohesionRadius: 10
-  seekTo: 01000000
+  distance: 10
+  angle: 180
+  countFrame: 300
 --- !u!50 &3782015892288196237
 Rigidbody2D:
   serializedVersion: 4
@@ -218,6 +202,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

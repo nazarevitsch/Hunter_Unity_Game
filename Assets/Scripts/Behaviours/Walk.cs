@@ -13,11 +13,11 @@ namespace Behaviours
         private float distance = 1;
         
         [SerializeField]
-        [Range(30, 90)]
+        [Range(30, 180)]
         private float angle = 45;
         
         [SerializeField]
-        [Range(0, 70)]
+        [Range(0, 1000)]
         private int countFrame = 30;
 
         private int count;
@@ -34,7 +34,6 @@ namespace Behaviours
             var predictSpeed = Time.fixedDeltaTime * indiv.VelocityLimit * forward;
             seekPosition = pos + predictSpeed * distance;
             count = countFrame;
-            Debug.DrawLine(pos, seekPosition, Color.blue, countFrame * Time.fixedDeltaTime);
             return VelocityToPosition(indiv, seekPosition, distance);
         }
     }
